@@ -1,0 +1,385 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ profile.user.username }} </title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free Website Template" name="keywords">
+        <meta content="Free Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+        <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+        <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Le contenu de la page -->
+    </body>
+</html>
+
+    <body>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 sticky-lg-top vh-100">
+                    <div class="d-flex flex-column h-100 text-center overflow-auto shadow">
+                        <img class="w-100 img-fluid mb-4" style="width: 300px; height: 370px; object-fit: cover;margin-top: 0%;" src="{{ profile.profile_picture.url }}" alt="Image">
+                        <h1 class="text-primary mt-2">{{ profile.user.username }}</h1>
+                        <div class="mb-4" style="height: 22px;">
+                            <h4 class="typed-text-output d-inline-block text-light"></h4>
+                            <div class="typed-text d-none">{{ profile.contact_info }}</div>
+                        </div>
+                        <div class="d-flex justify-content-center mt-auto mb-3">
+                            <a class="btn btn-secondary btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-secondary btn-square mx-1" href="https://www.facebook.com/mohamedlamine.balde.733"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-secondary btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-secondary btn-square mx-1" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="d-flex align-items-end justify-content-between border-top">
+                            <a href="" class="btn w-50 border-end">Download CV</a>
+                            <a href="#contact" class="btn w-50 btn-scroll">Contact Me</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <!-- About Start -->
+                    <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+                        <h1 class="title pb-3 mb-5">A propos De Moi</h1>
+                        <p>{{user.aprpos}}</p>
+                        <div class="row mb-4">
+                            <div class="col-sm-6 py-1">
+                                <span class="fw-medium text-primary">Nom:</span> {{user.first_name}}
+                            </div>
+                            <div class="col-sm-6 py-1">                          
+                                <span class="fw-medium text-primary">Prenoms:</span> {{user.last_name}}
+                            </div>
+                            <div class="col-sm-6 py-1">
+                                <span class="fw-medium text-primary">Birthday:</span> {{user.birthday}}
+                            </div>
+                            <div class="col-sm-6 py-1">
+                                <span class="fw-medium text-primary">Niveau:</span> {{user.birthday}}
+                            </div>
+                            <div class="col-sm-6 py-1">
+                                <span class="fw-medium text-primary">Experience:</span> 10 Years
+                            </div>
+                            <div class="col-sm-6 py-1">
+                                <span class="fw-medium text-primary">TelePhone:</span> {{user.phone}}
+                            </div>
+                            <div class="col-sm-6 py-1">
+                                <span class="fw-medium text-primary">Adresse-email:</span> {{user.email}}
+                            </div>
+                            <div class="col-sm-6 py-1">
+                                <span class="fw-medium text-primary">Address:</span> {{user.address}}
+                            </div>
+                            <div class="col-sm-6 py-1">
+                                <span class="fw-medium text-primary">Freelance:</span> {{user.freelance}}
+                            </div>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-md-4 col-lg-6 col-xl-4">
+                                <div class="d-flex bg-secondary p-4">
+                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0">{{ stats.years_of_experience }}</h1>
+                                    <div class="ps-3">
+                                        <p class="mb-0">Années</p>
+                                        <h5 class="mb-0">Experience</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-6 col-xl-4">
+                                <div class="d-flex bg-secondary p-4">
+                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0">{{ stats.happy_clients }}</h1>
+                                    <div class="ps-3">
+                                        <p class="mb-0">Clients</p>
+                                        <h5 class="mb-0">Heureux</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-6 col-xl-4">
+                                <div class="d-flex bg-secondary p-4">
+                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0">{{ stats.completed_projects }}</h1>
+                                    <div class="ps-3">
+                                        <p class="mb-0">Projets</p>
+                                        <h5 class="mb-0">Complet</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </section>
+                    <!-- About End -->
+                   <!-- Compétences Start -->
+                    <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+                        <h1 class="title pb-3 mb-5">Mes Compétences </h1>
+                        <div class="row">
+                            {% for skill in skills %}
+                            <div class="col-sm-6">
+                                <div class="skill mb-4">
+                                    <div class="d-flex justify-content-between">
+                                        <p class="mb-2">{{ skill.name }}</p>
+                                        <p class="mb-2">{{ skill.level }}%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar 
+                                            {% if skill.level <= 40 %}
+                                                bg-danger
+                                            {% elif skill.level <= 70 %}
+                                                bg-warning
+                                            {% else %}
+                                                bg-success
+                                            {% endif %}" 
+                                            role="progressbar" 
+                                            style="width: {{ skill.level }}%;" 
+                                            aria-valuenow="{{ skill.level }}" 
+                                            aria-valuemin="0" 
+                                            aria-valuemax="100">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+                    <!-- Compétences End -->
+                    <!-- Experience Start -->
+                    <section class="py-5 wow fadeInUp" data-wow-delay="0.1s">
+                        <h1 class="title pb-3 mb-5">Mes Experiences</h1>
+                        <div class="border-start border-2 border-light pt-2 ps-5">
+                            {% for experience in experiences %}
+                            <div class="position-relative mb-4">
+                                <span class="bi bi-arrow-right fs-4 text-light position-absolute" style="top: -5px; left: -50px;"></span>
+                                <h5 class="mb-1">{{ experience.job_title }}</h5>
+                                <p class="mb-2">{{ experience.company }} | 
+                                    <small>{{ experience.start_date }} - 
+                                        {% if experience.end_date %}{{ experience.end_date }}{% else %}Present{% endif %}
+                                    </small>
+                                </p>
+                                <p>{{ experience.description }}</p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+                     <!-- Experience End -->
+                    <!-- Subscribe Start -->
+                    <section class="wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="bg-secondary text-center p-5">
+                            <h1 class="text-white font-weight-bold">Subscribe My Newsletter</h1>
+                            <p class="text-white">Subscribe and get my latest article in your inbox</p>
+                            <div class="position-relative w-100">
+                                <input class="form-control bg-dark border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                                <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Subscribe End -->
+                     <!-- Service -->
+                    <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+                        <h1 class="title pb-3 mb-5">Services</h1>
+                        <div class="row g-4">
+                            {% for service in services %}
+                            <div class="col-md-6">
+                                <div class="service-item">
+                                    <i class="fa fa-2x {{ service.icon_class }} mx-auto mb-4"></i>
+                                    <h5 class="mb-2">{{ service.title }}</h5>
+                                    <p class="mb-0">{{ service.description }}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </section> 
+                    <!-- Service End --> 
+                     <!-- Blog Start -->                  
+                    <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+                        <h1 class="title pb-3 mb-5">Mes Blogs</h1>
+                        <div class="row">
+                             <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12 text-center mb-2">
+                                        <ul class="list-inline mb-4" id="portfolio-filters">
+                                            <li class="btn btn-secondary active" data-filter="*"><i class="fa fa-star me-2"></i>All</li>
+                                            <li class="btn btn-secondary" data-filter=".Design"><i class="fa fa-laptop-code me-2"></i>Design</li>
+                                            <li class="btn btn-secondary" data-filter=".Development"><i class="fa fa-mobile-alt me-2"></i>Development</li>
+                                        </ul>
+                                    </div>
+                              
+                                <div class="row portfolio-container">
+                                    {% for article in articles %}
+                                    <div class="col-md-6 mb-4 portfolio-item {{ article.categories|title }}">
+                                        <div class="position-relative overflow-hidden mb-2">
+                                             <img class="img-fluid w-100" src="{{ article.image.url }}" alt="{{ article.content }}">
+                                             <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                                                <a href="{{ article.image.url }}" data-lightbox="portfolio">
+                                                    <i class="bi bi-plus text-light"></i>
+                                                </a>
+                                            </div>
+                                           
+                                        </div>
+                                        <h3 class="text-center">{{ article.title }}</h3>
+                                        <p class="text-center">{{ article.content }}</p>
+                                        <span class="mr-2">{{ article.created_at|date:"F j, Y" }}</span>
+                                    </div>
+                                    {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                     <!-- Temoignage Start -->
+                     <section class="py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
+                        <h1 class="title pb-3 mb-5">Témoignages</h1>
+                        <div class="owl-carousel testimonial-carousel">
+                            {% for testimonial in testimonials %}
+                            <div class="text-left">
+                                <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                                <p class="fs-4 mb-4">{{ testimonial.testimonial }}</p>
+                                <div class="d-flex align-items-center">
+                                    <img class="img-fluid" src="{{ testimonial.image.url }}" style="width: 60px; height: 60px;">
+                                    <div class="ps-3">
+                                        <p class="text-primary fs-5 mb-1">{{ testimonial.client_name }}</p>
+                                        <i>{{ testimonial.profession }}</i>
+                                    </div>
+                                </div>
+                            </div>
+                            {% empty %}
+                            <p>Aucun témoignage trouvé.</p>
+                            {% endfor %}
+                        </div>
+                    </section>                    
+                    <!-- Temoignage End -->
+                     <!-- Contact Start -->
+                    <section class="py-5 wow fadeInUp" data-wow-delay="0.1s" id="contact">
+                        <h1 class="title pb-3 mb-5">Me Contacter</h1>
+
+                        <!-- Afficher les messages de succès ou d'erreur -->
+                        {% if messages %}
+                            <div>
+                                {% for message in messages %}
+                                    <div class="alert alert-success">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+                        <header>
+                            {% if name %}
+                                Merci {{ name }}, nous avons reçu votre message.
+                            {% else %}
+                                Envoyez-nous un message.
+                            {% endif %}
+                        </header>
+
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control border-0 bg-secondary" id="name" placeholder="Votre Nom" name="name">
+                                        <label for="name">Votre Nom complet</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control border-0 bg-secondary" id="email" placeholder="Votre Email" name="email">
+                                        <label for="email">Votre Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control border-0 bg-secondary" id="subject" placeholder="Sujet" name="subject">
+                                        <label for="subject">Sujet de votre message</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control border-0 bg-secondary" placeholder="Rédigez votre message ici" id="message" style="height: 200px" name="message"></textarea>
+                                        <label for="message">Rédigez Votre message ici...</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Envoyer</button>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                                                  
+                    <!-- Contact End -->
+
+                    <!-- Footer Start -->
+                    <section class="wow fadeIn" data-wow-delay="0.1s">
+                        <div class="bg-secondary text-light text-center p-5">
+                            <div class="d-flex justify-content-center mb-4">
+                                <a class="btn btn-dark btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-dark btn-square mx-1" href="https://www.facebook.com/mohamedlamine.balde.733"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-dark btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-dark btn-square mx-1" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                            <div class="d-flex justify-content-center mb-3">
+                                <a class="text-light px-3 border-end" href="#">Privacy</a>
+                                <a class="text-light px-3 border-end" href="#">Terms</a>
+                                <a class="text-light px-3 border-end" href="#">FAQs</a>
+                                <a class="text-light px-3" href="#">Help</a>
+                            </div>
+							
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+							<p class="m-0">&copy; All Rights Reserved. Designed by </a></p>
+                        </div>
+                    </section>
+                    <!-- Footer End -->
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/typed/typed.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+        <!-- Contact Javascript File -->
+        <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
