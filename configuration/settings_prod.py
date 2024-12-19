@@ -22,7 +22,7 @@ DATABASES = {'default':dj_database_url.config(conn_health_checks=True)}
 
 # Configuration des paramètres AWS S3
 AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
-AWS_S3_REGION_NAME = "eu-west-3"
+AWS_S3_REGION_NAME = "eu-central-1"
 AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
 
 # Static et Media files
